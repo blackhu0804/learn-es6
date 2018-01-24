@@ -1,4 +1,13 @@
 "use strict";
 
-var a = 1;
+var a = 'black';
+// console.log(a);
+
+// window.onload = function(){
+//   console.log(a);
+// }
+
+{
+  var a = "黑";
+}
 console.log(a);
