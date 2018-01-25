@@ -175,3 +175,30 @@ arr.filter(x => console.log(x));
 
 arr.some(x => console.log(x));
 ```
+
+## 对象的扩展
+```JavaScript
+let name = 'black';
+let skill = 'web';
+let obj = {name, skill};
+console.log(obj)
+
+let key = 'skill';
+let obj2 = {
+  [key]: 'web'
+}
+console.log(obj2)
+
+// 判断两个对象key是否相同
+console.log(Object.is(obj.skill, obj2.skill)) // true
+
+// assign 合并两个对象
+let a = {
+  a: 'black'
+}
+let b = {
+  b: 'web'
+}
+let c = Object.assign(a,b);
+console.log(c)
+```
