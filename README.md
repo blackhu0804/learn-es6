@@ -141,6 +141,27 @@ let arr2 = [1, 2, 3, 4];
 console.log(arr2.find(function(value, index, arr2){
   return value > 2;
 })) // 3
+
+// fill
+arr2.fill('555', 1, 4)
+console.log(arr2); // [ 1, '555', '555', '555' ]
+
+// 数组循环
+for (let [index, value] of arr2.entries()) {
+  console.log(`${index}:${value}`);
+}
+
+// copyWithin 第一个参数为从该位置替换数据， 第二个参数为从该位置读取数据， 第三个参数为到该位置前停止读取数据
+let arr3 = [1, 2, 3, 4];
+console.log(arr3.copyWithin(0,2,4)); // [ 3, 4, 3, 4 ]
 ```
 
+## 箭头函数
 
+```JavaScript
+var add = (a, b) => {
+  return a + b;
+}
+console.log(add(1,2));
+// 3
+```
