@@ -81,3 +81,18 @@ console.log('arr1:' + arr1);
 // 新的arr2:a,b,c,aaaa
 // arr1:a,b,c
 ```
+
+## 模板字符串
+
+```JavaScript
+//用${}引用变量
+let a = 111;
+console.log(`aaa ${a}`); // aaa 111
+
+//查找字符串是否存在
+let b = '111afasrds';
+console.log(b.includes(a)); // true
+
+//复制字符串
+console.log('a|'.repeat(2)); // a|a|
+```
