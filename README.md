@@ -118,3 +118,29 @@ console.log(Number.parseInt(123.2)); // 123
 console.log(Number.MAX_SAFE_INTEGER);
 console.log(Number.MIN_SAFE_INTEGER);
 ```
+
+## 数组的扩展
+
+```JavaScript
+//将json数组格式转换成数组
+let json = {
+  '0' : 'black',
+  '1' : 'hu',
+  length: 2
+}
+
+let arr = Array.from(json);
+console.log(arr); // [ 'black', 'hu' ]
+
+// Array.of
+let arr1 = Array.of(3, 4, 5, 6);
+console.log(arr1); // [ 3, 4, 5, 6 ]
+
+// find() 实例方法 , value 当前查找值，index 索引
+let arr2 = [1, 2, 3, 4];
+console.log(arr2.find(function(value, index, arr2){
+  return value > 2;
+})) // 3
+```
+
+
