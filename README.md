@@ -298,3 +298,46 @@ console.log(map.size); // 1
 // has
 console.log(map.has('suyu')); // true
 ```
+
+## Proxy
+
+> Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。
+
+```javascript
+let obj = {
+  add: function(val) {
+    return val + 100;
+  },
+  name: 'I am black'
+}
+
+let pro = new Proxy({
+  add: function(val) {
+    return val + 100;
+  },
+  name: 'I am black'
+},{
+  // 预处理
+  get: function(target, key, property){
+    console.log('come in Get');
+    return target[key];
+  },
+  set: function(target, key, value, receiver){
+    console.log(`setting ${key} = ${value}`);
+    // 必须返回才能改变
+    return target[key] = value;
+  }
+});
+
+console.log(pro.name);
+pro.name = 'suyu';
+console.log(pro.name);
+/* 
+output：
+  come in Get
+  I am black
+  setting name = suyu
+  come in Get
+  suyu 
+*/
+```
