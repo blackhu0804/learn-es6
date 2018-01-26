@@ -202,3 +202,21 @@ let b = {
 let c = Object.assign(a,b);
 console.log(c)
 ```
+
+## Symbol
+
+```javascript
+let obj = {
+  name: 'black',
+  skill: 'web'
+}
+let age = Symbol();
+
+console.log(obj); // { name: 'black', skill: 'web' }
+
+for(let item in obj){
+  console.log(obj[item])
+}
+// black
+// web
+```
